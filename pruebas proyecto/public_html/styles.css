@@ -1,0 +1,236 @@
+body{
+    background-image: url('imagenes/background.jpg');
+    height: 100rem;
+}
+/*HEADER DE LA PÁGINA*/
+
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2e2c2c;
+    backdrop-filter: blur(100px);
+    height: 4rem;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+#logo{
+    position: relative;
+    top: 2rem;
+    left: -3rem;
+    height: 310%;
+    
+}
+
+#titulo{
+    margin-right: 43%;
+    text-decoration:underline overline gold 1px;
+    color: white;
+        
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #3d3a3a;
+    padding: 0px;
+    position: fixed;
+    top: 4rem;
+    width: 100%;
+    transition: transform 0.5s ease;
+    
+    
+}
+
+nav.hidden {
+
+    transform: translateY(-100%); /* Mueve el nav fuera de la vista */
+
+}
+
+nav ul{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+nav a{
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    text-decoration:underline overline gold 1px;
+
+}
+
+nav li{
+    transition: transform 0.5s;    
+}
+
+nav li:hover{
+    transform: scale(1.2);
+}
+
+nav li:hover a{
+    text-decoration: none;
+    color: white;
+    text-decoration:underline overline gold 1px;
+}
+
+/* BARRA LATERAL */
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-top: 12rem;
+    width: 6rem; /* Ajusta el ancho según sea necesario */
+    height: 50%;
+    transition: transform 0.3s ease; /* Transición suave */
+    transform: translateX(-100%); /* Oculto por defecto */
+    border: solid;
+    border-radius: 1rem;
+    z-index: 2; /* Asegúrate de que el menú lateral esté por encima del contenido */
+}
+
+#sidebar ul{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+#sidebar.visible {
+    transform: translateX(0); /* Muestra el menú */
+}
+
+#sidebar li{
+    transition: transform 0.5s;
+}
+
+#sidebar li:hover{
+    transform: scale(1.2);
+}
+
+#sidebar li:hover a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/*ICONOS*/
+
+.icono{
+    height: 5rem;
+}
+
+/*CONTENIDO DE LA PAGINA*/
+
+.contenido{
+    margin-left: 8rem;
+    margin-right: 8rem;
+    margin-top: 8rem;
+    height: 50rem;
+    dislplay: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*CARRUSEL*/
+.carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative; /* Asegúrate de que el carrusel esté en el flujo del documento */
+
+}
+
+.imagenes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.img {
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.85);
+    height: 400px; /* Ajustado para encuadrar mejor */
+    width: 800px; /* Ajustado para encuadrar mejor */
+    border-radius: 15px;
+    margin: 5px;
+    object-fit: cover;
+    filter: saturate(175%);
+}
+
+.texto {
+    overflow: hidden;
+    position: absolute;
+    flex-direction: column;
+    transform: translateY(0px);
+    margin-bottom: 10px; /* Espacio entre el texto y la imagen */
+    backdrop-filter: blur(2px);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    width: 600px; /* Ancho fijo para el texto */
+}
+
+.texto h3 {
+    text-shadow: 0px 0px 15px black;
+    color: white;
+    font-weight: 300;
+    font-size: 24px; /* Tamaño de fuente ajustado */
+    margin: 0;
+}
+
+.texto p {
+    align-items: center;
+    padding: 10px; /* Espacio interno */
+    color: white;
+    font-size: 16px; /* Tamaño de fuente ajustado */
+    font-weight: 300;
+}
+
+.imagenes .texto {
+    height:  50px; /* Altura fija para el texto */
+    transition: 1s;
+}
+
+.imagenes:hover .texto {
+    transition: height 1s, transform 1s;
+    transform: translateY(-180%); /* Movimiento hacia arriba */
+    height: 20%; /* Altura expandida al hacer hover */
+    background-color: transparent;
+}
+
+.imagenes:hover .texto p {
+    transition: font-size 0s .2s linear;
+    font-size: 20px; /* Tamaño de fuente ajustado */
+    font-weight: 300;
+    text-shadow: 0px 0px 10px #000000;
+}
