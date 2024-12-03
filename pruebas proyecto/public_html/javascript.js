@@ -38,19 +38,28 @@ window.addEventListener('scroll', function() {
 let videos = [
     {
         "url": "videos/marcha_nazi.mp4",
-        "nombre": "Proyecto 01",
-        "descripcion": "Este es el proyecto 01 fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
+        "nombre": "El Águila imperial",
+        "descripcion": "todavia no se qué poner",
+        "lider": ["imagenes/hitler.png", "imagenes/mussolini.png"]
     },
     {
         "url": "videos/marcha_rusa.mp4",
-        "nombre": "Proyecto 02",
-        "descripcion": "Hola a todos este es el proyecto 02 y fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
+        "nombre": "El gran oso rojo",
+        "descripcion": "todavia no se qué poner",
+        "lider": ["imagenes/hitler.png", "imagenes/goering.png"]
     },
     {
         "url": "videos/marcha_aliados.mp4",
-        "nombre": "Proyecto 03",
-        "descripcion": "Este proyecto, es el 03 y fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
+        "nombre": "Ecos de la libertad",
+        "descripcion": "todavia no se qué poner",
+        "lider": ["imagenes/hitler.png", "imagenes/mussolini.png"]
     },
+    {
+        "url": "videos/marcha_japon.mp4",
+        "nombre": "El Sol del Este",
+        "descripcion": "todavia no se qué poner",
+        "lider": ["imagenes/hitler.png", "imagenes/goering.png"]
+    }
 ];
 
 let videoContainer = document.getElementById('video');
@@ -67,6 +76,9 @@ async function cargarVideo() {
     `;
     texto.innerHTML = `
         <h3>${videos[actual].nombre}</h3>
+        <div class="lideres">
+            ${videos[actual].lider.map(lider => `<img src="${lider}" alt="${videos[actual].lider}" />`).join('')}
+        </div>
         <p>${videos[actual].descripcion}</p>
     `;
     await fadeIn();
