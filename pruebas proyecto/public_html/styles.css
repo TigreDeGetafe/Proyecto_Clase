@@ -9,7 +9,7 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: #2e2c2c;
     backdrop-filter: blur(100px);
     height: 4rem;
@@ -18,16 +18,24 @@ header{
     z-index: 1;
 }
 
-#logo{
+#logo1{
     position: relative;
     top: 2rem;
-    left: -3rem;
+    left: -23rem;
     height: 310%;
     
 }
 
+#logo2{
+    position: relative;
+    top: 2rem;
+    left: 23rem;
+    height: 310%;
+    
+}
+
+
 #titulo{
-    margin-right: 43%;
     text-decoration:underline overline gold 1px;
     color: white;
         
@@ -57,7 +65,7 @@ nav ul{
     width: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     list-style-type: none;
     padding: 5px;
     padding-left: 10px;
@@ -151,7 +159,7 @@ nav li:hover a{
     margin-right: 8rem;
     margin-top: 8rem;
     height: 50rem;
-    dislplay: flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
 }
@@ -208,6 +216,18 @@ nav li:hover a{
     margin: 0;
 }
 
+.texto img{
+    height: 10rem;
+}
+
+.texto .lideres{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
 .texto p {
     align-items: center;
     padding: 10px; /* Espacio interno */
@@ -223,8 +243,8 @@ nav li:hover a{
 
 .imagenes:hover .texto {
     transition: height 1s, transform 1s;
-    transform: translateY(-180%); /* Movimiento hacia arriba */
-    height: 20%; /* Altura expandida al hacer hover */
+    transform: translateY(-60%); /* Movimiento hacia arriba */
+    height: 40%; /* Altura expandida al hacer hover */
     background-color: transparent;
 }
 
@@ -234,3 +254,18 @@ nav li:hover a{
     font-weight: 300;
     text-shadow: 0px 0px 10px #000000;
 }
+
+
+
+/*SEGUNDA SECCIÓN DE LA PÁGINA WEB*/
+
+.contenido2{
+    margin-left: 8rem;
+    margin-right: 8rem;
+    margin-top: 16rem;
+    height: 50rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
