@@ -34,32 +34,67 @@ window.addEventListener('scroll', function() {
 });
 
 
-
 let videos = [
     {
         "url": "videos/marcha_nazi.mp4",
         "nombre": "El Águila imperial",
-        "descripcion": "todavia no se qué poner",
-        "lider": ["imagenes/hitler.png", "imagenes/mussolini.png"]
+        "descripcion": "la poderosa alianza entre la Alemania nazi y la Italia fascista,¿Quién podrá detenerla antes de que la vieja Europa caiga bajo su sombra?",
+        "lider": [
+            { "imagen": "videos/hitler.gif", 
+              "nombre": "Adolf Hitler", 
+              "fecha": "1889 - 1945"
+            },
+            { "imagen": "videos/mussolini.gif", 
+              "nombre": "Benito Mussolini", 
+              "fecha": "1883 - 1945" 
+            }
+        ]
     },
     {
         "url": "videos/marcha_rusa.mp4",
         "nombre": "El gran oso rojo",
-        "descripcion": "todavia no se qué poner",
-        "lider": ["imagenes/hitler.png", "imagenes/goering.png"]
+        "descripcion": "Con el intento del Águila y el Sol naciente por aniqularlos, ¿Será capaz la marea roja de frenar la fuerza con la que arremeten?",
+        "lider": [
+            { "imagen": "videos/stalin.gif", 
+              "nombre": "Iósif Stalin", 
+              "fecha": "1878 - 1953"
+            },
+            { "imagen": "videos/mao.gif", 
+              "nombre": "Mao Tse-Tung", 
+              "fecha": "1893 - 1976" 
+            }
+        ]
     },
     {
         "url": "videos/marcha_aliados.mp4",
         "nombre": "Ecos de la libertad",
-        "descripcion": "todavia no se qué poner",
-        "lider": ["imagenes/hitler.png", "imagenes/mussolini.png"]
+        "descripcion": "En una época sumida por los totalitarismos, ¿Será capaz la libertad de triunfar y quebrar su yugo?",
+        "lider": [
+            { "imagen": "videos/roosevelt.gif", 
+              "nombre": "Franklin D. Roosevelt", 
+              "fecha": "1882 - 1945"
+            },
+            { "imagen": "videos/churchill.gif", 
+              "nombre": "Winston Churchill", 
+              "fecha": "1874 - 1965" 
+            }
+        ]
     },
     {
         "url": "videos/marcha_japon.mp4",
         "nombre": "El Sol del Este",
-        "descripcion": "todavia no se qué poner",
-        "lider": ["imagenes/hitler.png", "imagenes/goering.png"]
-    }
+        "descripcion": "Los rayos del Sol naciente, como tentaculos, se expanden. ¿Será esta ambición la que acabe con su grandeza?",
+        "lider": [
+            { "imagen": "videos/hirohito.gif", 
+              "nombre": "Hirohito", 
+              "fecha": "1901 - 1989"
+            },
+            { "imagen": "videos/puyi.gif", 
+              "nombre": "Puyi", 
+              "fecha": "1906 - 1967" 
+            }
+        ]
+    }    
 ];
 
 let videoContainer = document.getElementById('video');
@@ -77,7 +112,15 @@ async function cargarVideo() {
     texto.innerHTML = `
         <h3>${videos[actual].nombre}</h3>
         <div class="lideres">
-            ${videos[actual].lider.map(lider => `<img src="${lider}" alt="${videos[actual].lider}" />`).join('')}
+            ${videos[actual].lider.map(lider => `
+                <div class="lider">
+                <div class="lider-info">
+                    <img src="${lider.imagen}" alt="${lider.nombre}" />
+                    <span>${lider.nombre}</span>
+                    <span>${lider.fecha}</span>
+                </div>
+            </div>
+            `).join('')}
         </div>
         <p>${videos[actual].descripcion}</p>
     `;
@@ -118,4 +161,7 @@ function fadeIn() {
 setInterval(function() {
     actual = (actual + 1) % videos.length; // Cambia al siguiente video
     cargarVideo();
-}, 30000); // Cambia el video cada 30000 ms (30 segundos)
+}, 10000); // Cambia el video cada 10000 ms (10 segundos)
+
+
+//WIKIPEDIA
