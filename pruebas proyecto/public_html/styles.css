@@ -220,6 +220,26 @@ nav li:hover a{
     height: 10rem;
 }
 
+.lideres {
+    display: flex; /* Usar flexbox para alinear los líderes */
+    flex-direction: column; /* Alinear en columna */
+    gap: 10px; /* Espacio entre los líderes */
+}
+
+
+.lider {
+    display: flex; /* Usar flexbox para alinear imagen y texto */
+    align-items: center; /* Alinear verticalmente al centro */
+}
+
+
+.lider-info {
+    display: flex;
+    flex-direction: column; /* Alinear imagen, nombre y fecha en columna */
+    align-items: center; /* Centrar horizontalmente */
+    color: white;
+}
+
 .texto .lideres{
     width: 100%;
     display: flex;
@@ -250,22 +270,12 @@ nav li:hover a{
 
 .imagenes:hover .texto p {
     transition: font-size 0s .2s linear;
-    font-size: 20px; /* Tamaño de fuente ajustado */
+    font-size: 15px; /* Tamaño de fuente ajustado */
     font-weight: 300;
     text-shadow: 0px 0px 10px #000000;
 }
 
 
 
-/*SEGUNDA SECCIÓN DE LA PÁGINA WEB*/
-
-.contenido2{
-    margin-left: 8rem;
-    margin-right: 8rem;
-    margin-top: 16rem;
-    height: 50rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+/*ESPACIO WIKIPEDIA*/
 
